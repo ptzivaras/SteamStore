@@ -44,3 +44,14 @@ Remove-Item package-lock.json
 npm install
 
 # npm run dev
+
+# Why use Router?
+ALl should be in the same component
+We would need contitional rendering
+url would not change so no refresh or back in the browser
+So with Router
+-Each page is separated in a clean way
+-press a game  changes url so yousee new page
+-back button works easy
+-This is clean way to create SPA
+...So Router is because we click on game and see info.If we see info under game and not by clicking it then no ROuter would be needed so we did not create it from start of app.

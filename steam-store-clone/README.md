@@ -1,16 +1,53 @@
-# React + Vite
+# 🎮 Steam Store Clone 'SPA'
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simplified **Steam Store clone** built for practice, following the exact specs of the Client. Todo Improve UI
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
+- React (Vite)
+- TailwindCSS
+- React Router
+- Mock Data (no external APIs)
+---
 
-## React Compiler
+## 🧱 Features
+✅ Tabs:
+- New & Trending  
+- Top Sellers  
+- What’s Being Played  
+- Upcoming  
+✅ Search bar (filters games by name)  
+✅ Game Info Page (with Back button)  
+✅ Responsive layout using TailwindCSS  
+## Future Features
+1. Pagination or infinite scroll for the games.
+2. Sorting (e.g Price or Discount).
+3. Favorites / Wishlist Features.
+4. Dark / Light mode toggle(Use Context Api).
+5. Global state (Redux Toolkit and Context API for authentication and darkmode ).
+6. API calls instead of mock data with tanstack.
+7. User login / authentication. (Choose OATH/JWT)
+8. Responsive grid breakpoints Advanced (not basic Tailwind).
+9. Animations / transitions (not just hover).
+10. Persistence (Like save in localStorage).
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🗂️ Project Structure
+src/
+├─ components/ → Reusable UI components (GameCard)
+├─ pages/ → Page components (GameInfoPage)
+├─ data/ → Mock data (games.js)
+├─ assets/ → Local images
+└─ App.jsx / main.jsx
 
-## Expanding the ESLint configuration
+# yaml
+---
+## 🧰 Setup
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Start the dev server
+npm run dev
+
