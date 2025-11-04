@@ -1,8 +1,10 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import { gamesData } from "./data/games";
 import GameCard from "./components/GameCard";
+import GameInfoPage from "./pages/GameInfoPage";
 
-function App() {
+function HomePage() {
   const tabs = Object.keys(gamesData);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [search, setSearch] = useState("");
@@ -15,7 +17,6 @@ function App() {
     <div className="min-h-screen bg-gray-900 text-white p-6">
       <h1 className="text-3xl font-bold mb-6">Steam Store Clone</h1>
 
-      {/* Tabs */}
       <div className="flex gap-4 mb-6 flex-wrap">
         {tabs.map((tab) => (
           <button
@@ -30,7 +31,6 @@ function App() {
         ))}
       </div>
 
-      {/* Search Bar */}
       <div className="mb-6">
         <input
           type="text"
@@ -41,10 +41,13 @@ function App() {
         />
       </div>
 
-      {/* Game Cards */}
       <div className="flex flex-wrap gap-4">
         {filteredGames.length > 0 ? (
-          filteredGames.map((game) => <GameCard key={game.id} game={game} />)
+          filteredGames.map((game) => (
+            <Link key={game.id} to={`/game/${game.id}`}>
+              <GameCard game={game} />
+            </Link>
+          ))
         ) : (
           <p className="text-gray-400">No games found.</p>
         )}
@@ -53,4 +56,13 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/game/:id" element={<GameInfoPage />} />
+      </Routes>
+    </Router>
+  );
+}
