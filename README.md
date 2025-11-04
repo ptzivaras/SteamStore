@@ -1,4 +1,4 @@
-# SteamStore
+# SteamStore Read me inside  other folder.
 Clone of steam store
 
 # Create with Vite (React + JS)
